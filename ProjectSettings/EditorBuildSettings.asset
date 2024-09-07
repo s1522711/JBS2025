@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/IntroCutscene.unity
+    guid: b5305b7e0e7c53244965dc9e044a2030
+  - enabled: 1
+    path: Assets/Scenes/menu.unity
+    guid: c94a5de5fe861ba40a893f8d0ae17943
+  - enabled: 1
+    path: Assets/Scenes/bombStore.unity
+    guid: 6c398b7a396f288409c40fcae5c641a6
+  - enabled: 1
+    path: Assets/Scenes/gm_bigcity.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/bidenParkour.unity
+    guid: dd1b91b26a11021499de07ed057f760e
+  - enabled: 1
+    path: Assets/Scenes/jbs2022.unity
+    guid: aba6560c067e8904e8388ce7c98e2109
+  - enabled: 1
+    path: Assets/Scenes/jbs2022Win.unity
+    guid: 16c189c3c3dc73148941b9d406da5045
+  m_configObjects: {}
