@@ -34,7 +34,7 @@ public class SwitchSceneAfterPlaybackIsOver : MonoBehaviour
     void Update()
     {
         // if the player presses the space key, skip the video and load the next scene
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.JoystickButton0))
         {
             StartCoroutine(LoadNextScene());
         }   

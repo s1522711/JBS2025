@@ -1072,7 +1072,7 @@ MonoBehaviour:
   YouWinTextCanvas: {fileID: 40497275}
   planeSpawnDelay: 10
   plane2SoundDelay: 10
-  plane2SpawnDelay: 10
+  plane2SpawnDelay: 5
   winDelay: 10
   sceneSwitchDelay: 5
 --- !u!4 &1005907135
@@ -1689,7 +1689,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ffc0333a629632a4ca62c48a01570fda, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 131df42aed02a244288f46184fd7d9e0, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
