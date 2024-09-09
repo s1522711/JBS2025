@@ -10,6 +10,7 @@ public class FunMode : MonoBehaviour
     [Header("Fun Mode Settings")]
     public bool funModeEnabled = false;
     public KeyCode funModeKey = KeyCode.F;
+    public KeyCode funModeControllerKey = KeyCode.JoystickButton1;
     public float funModeMaxAirSpeed = 1000f;
     public float funModeAirAcceleration = 50f;
     public float funModeJumpForwardsSpeed = 30f;
