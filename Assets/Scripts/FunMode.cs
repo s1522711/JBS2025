@@ -10,7 +10,7 @@ public class FunMode : MonoBehaviour
     [Header("Fun Mode Settings")]
     public bool funModeEnabled = false;
     public KeyCode funModeKey = KeyCode.F;
-    public KeyCode funModeControllerKey = KeyCode.JoystickButton1;
+    public KeyCode funModeControllerKey = KeyCode.JoystickButton3;
     public float funModeMaxAirSpeed = 1000f;
     public float funModeAirAcceleration = 50f;
     public float funModeJumpForwardsSpeed = 30f;
@@ -49,7 +49,7 @@ public class FunMode : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(funModeKey))
+        if (Input.GetKeyDown(funModeKey) || Input.GetKeyDown(funModeControllerKey))
         {
             funModeEnabled = !funModeEnabled;
             Debug.Log("Fun mode updated: " + funModeEnabled);
