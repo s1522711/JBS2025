@@ -62,6 +62,7 @@ namespace KinematicCharacterController.Examples
         public float JumpPreGroundingGraceTime = 0f;
         public float JumpPostGroundingGraceTime = 0f;
         public AudioSource jumpSound;
+        //public KeyCode controllerJumpKey = KeyCode.JoystickButton0;
 
         [Header("Misc")]
         public List<Collider> IgnoredColliders = new List<Collider>();

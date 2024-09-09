@@ -7,6 +7,8 @@ public class PickupController : MonoBehaviour
 {
     [Header("Pickup Settings")]
     [SerializeField] Transform holdArea;
+    [SerializeField] KeyCode pickupKey = KeyCode.E;
+    [SerializeField] KeyCode controllerPickupKey = KeyCode.JoystickButton2;
     private GameObject heldObj;
     private Rigidbody heldObjRb;
 
@@ -49,7 +51,7 @@ public class PickupController : MonoBehaviour
             }
         }
         
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(pickupKey) || Input.GetKeyDown(controllerPickupKey))
         {
             if (heldObj == null)
             {
