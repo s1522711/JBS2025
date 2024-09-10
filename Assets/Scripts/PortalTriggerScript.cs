@@ -26,6 +26,11 @@ public class PortalTriggerScript : MonoBehaviour
     // Called when the player enters the trigger
     void OnTriggerEnter(Collider other)
     {
+        if (other.tag == "IgnorePortal")
+        {
+            return;
+        }
+        
         if (portalSound != null)
         {
             portalSound.Play();

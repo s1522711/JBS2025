@@ -16,4 +16,9 @@ public class RotateTerrorist : MonoBehaviour
     {
         transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
     }
+
+    public void ResetRotation()
+    {
+        transform.rotation = Quaternion.identity;
+    }
 }
