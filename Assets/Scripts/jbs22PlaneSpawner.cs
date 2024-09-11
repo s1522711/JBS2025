@@ -7,7 +7,11 @@ public class jbs22PlaneSpawner : MonoBehaviour
     [Header("Plane")]
     public GameObject plane;
     public List<GameObject> planeSpawnLocations;
-    public int planeSpeed = 500;
+
+    [Header("Speeds")]
+    public int PlaneSpeedX = 500;
+    public int PlaneSpeedY = 500;
+    public int PlaneSpeedZ = 500;
 
     [Header("Delays")]
     public float planeSpawnDelay = 5f;
@@ -39,7 +43,7 @@ public class jbs22PlaneSpawner : MonoBehaviour
 
                 
                 // Add force to the plane
-                newPlane.GetComponent<Rigidbody>().AddForce(0, 0, planeSpeed, ForceMode.VelocityChange);
+                newPlane.GetComponent<Rigidbody>().AddForce(PlaneSpeedX, PlaneSpeedY, PlaneSpeedZ, ForceMode.VelocityChange);
 
                 // add ttl script to the plane
                 AudoDeleteAfterTime ttlScript = newPlane.AddComponent<AudoDeleteAfterTime>();
