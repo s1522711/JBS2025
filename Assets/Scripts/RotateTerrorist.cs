@@ -5,10 +5,12 @@ using UnityEngine;
 public class RotateTerrorist : MonoBehaviour
 {
     public float rotationSpeed = 100.0f;
+    // save the initial rotation
+    private Quaternion initialRotation;
     // Start is called before the first frame update
     void Start()
     {
-        
+        initialRotation = transform.rotation;
     }
 
     // Update is called once per frame
@@ -19,6 +21,6 @@ public class RotateTerrorist : MonoBehaviour
 
     public void ResetRotation()
     {
-        transform.rotation = Quaternion.identity;
+        transform.rotation = initialRotation;
     }
 }
