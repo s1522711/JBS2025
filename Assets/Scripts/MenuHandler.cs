@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using GLTF.Schema;
 using UnityEngine;
 
 public class MenuHandler : MonoBehaviour
@@ -10,6 +11,10 @@ public class MenuHandler : MonoBehaviour
     [SerializeField] public string Button2Scene = "bidenParkour";
 
     [SerializeField] public string Button3Scene = "jbs2022";
+
+    [SerializeField] public Canvas creditsCanvas;
+    
+    [SerializeField] public Canvas mainMenuCanvas;
 
     [Header("Sound")]
     public AudioSource button3StartSound;
@@ -42,6 +47,18 @@ public class MenuHandler : MonoBehaviour
             DontDestroyOnLoad(button3StartSound.gameObject);
         }
         UnityEngine.SceneManagement.SceneManager.LoadScene(Button3Scene);
+    }
+
+    public void Credits()
+    {
+        mainMenuCanvas.gameObject.SetActive(false);
+        creditsCanvas.gameObject.SetActive(true);
+    }
+
+    public void BackToMainMenu()
+    {
+        creditsCanvas.gameObject.SetActive(false);
+        mainMenuCanvas.gameObject.SetActive(true);
     }
 
     public void QuitGame()
