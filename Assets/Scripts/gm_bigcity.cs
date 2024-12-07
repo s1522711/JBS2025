@@ -9,7 +9,16 @@ public class gm_bigcity : MonoBehaviour
     public GameObject plane;
     public GameObject planeSpawnLocation;
     public GameObject plane2SpawnLocation;
-    public int planeSpeed = 500;
+    public ParticleSystem planeExplosion;
+    public int planeSpeedX = 0;
+    public int planeSpeedY = 0;
+    public int planeSpeedZ = 500;
+    public int planeHitForceX = 0;
+    public int planeHitForceY = 0;
+    public int planeHitForceZ = 10;
+    public int planeHitTorqueX = 0;
+    public int planeHitTorqueY = 100;
+    public int planeHitTorqueZ = 0;
 
     [Header("Sounds")]
     public AudioSource planeHitSound;
@@ -50,8 +59,15 @@ public class gm_bigcity : MonoBehaviour
         newPlane.transform.localScale = new Vector3(1, 1, 1);
         newPlane.transform.position = planeSpawnLocation.transform.position;
         newPlane.transform.rotation = planeSpawnLocation.transform.rotation;
-        newPlane.GetComponent<Rigidbody>().AddForce(0, 0, planeSpeed, ForceMode.VelocityChange);
+        newPlane.GetComponent<Rigidbody>().AddForce(planeSpeedX, planeSpeedY, planeSpeedZ, ForceMode.VelocityChange);
         newPlane.GetComponent<PlaneHit>().hitSound = planeHitSound;
+        newPlane.GetComponent<PlaneHit>().forceX = planeHitForceX;
+        newPlane.GetComponent<PlaneHit>().forceY = planeHitForceY;
+        newPlane.GetComponent<PlaneHit>().forceZ = planeHitForceZ;
+        newPlane.GetComponent<PlaneHit>().torqueX = planeHitTorqueX;
+        newPlane.GetComponent<PlaneHit>().torqueY = planeHitTorqueY;
+        newPlane.GetComponent<PlaneHit>().torqueZ = planeHitTorqueZ;
+        newPlane.GetComponent<PlaneHit>().explosion = planeExplosion;
 
         yield return new WaitForSeconds(plane2SoundDelay);
         if (plane2Sound != null)
@@ -67,8 +83,15 @@ public class gm_bigcity : MonoBehaviour
         newPlane2.transform.localScale = new Vector3(1, 1, 1);
         newPlane2.transform.position = plane2SpawnLocation.transform.position;
         newPlane2.transform.rotation = plane2SpawnLocation.transform.rotation;
-        newPlane2.GetComponent<Rigidbody>().AddForce(0, 0, planeSpeed, ForceMode.VelocityChange);
+        newPlane2.GetComponent<Rigidbody>().AddForce(planeSpeedX, planeSpeedY, planeSpeedZ, ForceMode.VelocityChange);
         newPlane2.GetComponent<PlaneHit>().hitSound = planeHitSound;
+        newPlane2.GetComponent<PlaneHit>().forceX = planeHitForceX;
+        newPlane2.GetComponent<PlaneHit>().forceY = planeHitForceY;
+        newPlane2.GetComponent<PlaneHit>().forceZ = planeHitForceZ;
+        newPlane2.GetComponent<PlaneHit>().torqueX = planeHitTorqueX;
+        newPlane2.GetComponent<PlaneHit>().torqueY = planeHitTorqueY;
+        newPlane2.GetComponent<PlaneHit>().torqueZ = planeHitTorqueZ;
+        newPlane2.GetComponent<PlaneHit>().explosion = planeExplosion;
 
         yield return new WaitForSeconds(winDelay);
         YouWinTextCanvas.enabled = true;

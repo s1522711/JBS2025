@@ -10,6 +10,16 @@ public class PlaneHit : MonoBehaviour
     private int WallHits = 0;
     private Rigidbody rb;
 
+    [Header("Directions")]
+    public int forceX = 0;
+    public int forceY = 0;
+    public int forceZ = 10;
+    public int torqueX = 0;
+    public int torqueY = 100;
+    public int torqueZ = 0;
+
+    public ParticleSystem explosion;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +34,7 @@ public class PlaneHit : MonoBehaviour
         if (WallHits > 0)
         {
             //rb.useGravity = false;
-            rb.AddForce(0, 0, 10, ForceMode.VelocityChange);
+            rb.AddForce(forceX, forceY, forceZ, ForceMode.VelocityChange);
         }
     }
 
@@ -33,10 +43,14 @@ public class PlaneHit : MonoBehaviour
         // if the plane hits a wall, stop pushing it
         if (collision.gameObject.tag == "Wall")
         {
+            if (explosion != null && WallHits == 0)
+            {
+                explosion.Play();
+            }
             WallHits = 1;
             Debug.Log("Hit wall");
             // rotate the plane a bit
-            rb.AddTorque(0, 100, 0, ForceMode.Impulse);
+            rb.AddTorque(torqueX, torqueY, torqueZ, ForceMode.Impulse);
 
             // stop the flying sound
             if (FlyingSound != null)
